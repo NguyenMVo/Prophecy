@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["GET", "POST"])
 def predict():
     url_text = request.form["textsend"]
     org_text = ocr.detection(url_text)
